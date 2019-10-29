@@ -1,0 +1,67 @@
+﻿@model Production.Models.InternalProductorModel
+
+@{
+    ViewBag.Title = "InternalProductorView";
+}
+
+
+<div class="wrap-contact3">
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <span class="contact3-form-title">
+                Internal Productor
+            </span>
+
+            <div class="wrap-input3 validate-input" data-validate="Id is required">
+                <input class="input3" type="text" name="id" placeholder="Document">
+                <span class="focus-input3"></span>
+            </div>
+
+            <div class="wrap-input3 validate-input" data-validate="Name is required">
+                <input class="input3" type="text" name="Name" placeholder="Name">
+                <span class="focus-input3"></span>
+            </div>
+            <div class="wrap-input3 validate-input" data-validate="Last Name is required">
+                <input class="input3" type="text" name="LastName" placeholder="Last Name">
+                <span class="focus-input3"></span>
+            </div>
+
+            <div class="wrap-input3 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <input class="input3" type="text" name="Email" placeholder="Email">
+                <span class="focus-input3"></span>
+            </div>
+
+            <div class="wrap-input3 validate-input" data-validate="Telephone Number is required">
+                <input class="input3" type="text" name="JobTitle" placeholder="Job Title">
+                <span class="focus-input3"></span>
+            </div>
+
+            <div class="wrap-input3 validate-input" data-validate="Job Title is required">
+                <input class="input3" type="number" name="TelephoneNumber" placeholder="Telephone Number">
+                <span class="focus-input3"></span>
+            </div>
+            <div class="form-group">
+                <div class="container-contact3-form-btn">
+                    <input type="submit" value="Create" class="contact3-form-btn">
+                    <br>
+                </div>
+            </div>
+
+        </div>
+
+    }
+    <form method="get" action="~/Views/InternalProductor/ConsultView.cshtml">
+        <button><a href="/ConsultView" class="contact3-form-btn">Consult</a></button>
+        <input type="submit" value="Create" class="contact3-form-btn">
+    </form>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

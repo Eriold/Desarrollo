@@ -1,0 +1,57 @@
+﻿@model Production.Models.StatusModel
+
+@{
+    ViewBag.Title = "StatusView";
+}
+
+
+<div class="wrap-contact3">
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <span class="contact3-form-title">
+                Status
+            </span>
+
+
+            <div class="wrap-input3 validate-input" data-validate="Name is required">
+                <input class="input3" type="text" name="name" placeholder="Name">
+                <span class="focus-input3"></span>
+            </div>
+
+            <div class="wrap-input3 validate-input" data-validate="Color is required">
+                <input class="input3" placeholder="Select Status color">
+                <input type="radio" name="rbtncolor" value="Green"> Green<br>
+                <input type="radio" name="rbtncolor" value="Red"> Red<br>
+                <input type="radio" name="rbtncolor" value="Orange"> Orange<br>
+                <input type="radio" name="rbtncolor" value="Blue"> Blue<br>
+                <span class="focus-input3"></span>
+            </div>
+
+            <div class="wrap-input3 validate-input" data-validate="descriptionStatus is required">
+                <input class="input3" type="text" name="descriptionStatus" placeholder="Description Status">
+                <span class="focus-input3"></span>
+            </div>
+
+
+            <div class="form-group">
+                <div class="container-contact3-form-btn">
+                    <input type="submit" value="Create" class="contact3-form-btn">
+                    <br>
+                    <button><a href="/DeveloperTeam" class="contact3-form-btn">Search</a></button>
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
